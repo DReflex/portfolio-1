@@ -30,4 +30,39 @@ router.delete('/todos/:id', function(req, res, next){
     res.send(del);
   }).catch(next);
 })
+
+
+// can come in handy
+
+router.put('/test_res', function(req, res, next){
+ Comments.findOne(
+    {
+    comments: {$elemMatch: {_id: req.body.comment_id}}
+  }
+  ).then(function(data){
+    var comment_id = req.body.comment_id;
+    var response_id = req.body.response_id;
+    var modify = req.body.modify;
+    data.comments.forEach(function(elem){
+      if(elem._id == comment_id){
+        if(req.body.response_id === undefined){
+          elem.vote = req.body.vote;
+          elem.up = req.body.up;
+          elem.down = req.body.down
+        }else{
+          elem.response.forEach(function(response){
+            if(response._id == response_id){
+              response.vote = req.body.vote
+              response.up= req.body.up
+              response.down=req.body.down
+            }
+          })
+        }
+      }
+    })
+    data.save()
+    res.end()
+  }).catch(next)
+
+})
 module.exports = router;

@@ -6,13 +6,16 @@ const bodyParser = require('body-parser');
 
 const app =express();
 app.set('port', (process.env.PORT || 4000));
-var promise = mongoose.connect('mongodb://localhost/todos', {
-  useMongoClient: true,
-  /* other options */
-});
-mongoose.Promise = global.Promise;
-app.use(bodyParser.json());
 
+// uncomment to connetc to db
+
+// var promise = mongoose.connect('mongodb://localhost/todos', {
+//   useMongoClient: true,
+//   /* other options */
+// });
+mongoose.Promise = global.Promise;
+
+app.use(bodyParser.json());
 
 app.use('/api', require('./routes/api'));
 

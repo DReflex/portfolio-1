@@ -249,7 +249,9 @@
   #book, #clock, #chart, #club{
     background-position: top;
   }
-  #book:hover, #clock:hover, #chart:hover, #club:hover{
+  #book:hover, #clock:hover, #chart:hover, #club:hover,
+   #book:focus, #clock:focus, #chart:focus, #club:focus,
+   #book:active, #clock:active, #chart:active, #club:active{
     background-position: bottom;
   }
   .row, .certC{

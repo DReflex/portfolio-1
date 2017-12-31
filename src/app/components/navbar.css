@@ -1,0 +1,124 @@
+body{
+  overflow-x: hidden;
+}
+.nav{
+  position: fixed;
+  top:0;
+  width:100%;
+  z-index: 10;
+  background:transparent;
+  height:50px;
+  display: flex;
+  margin:auto;
+  transition:1s ease
+}
+.burger{
+  position: relative;
+  right:20px;
+  margin:auto;
+  margin-right: 20px;
+}
+.burger input{
+  position: absolute;
+  width:40px;
+  height:100%;
+  z-index: +12;
+  margin:auto;
+  opacity:0;
+  cursor: pointer;
+}
+.burger span{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #ededed;
+  border-radius: 3px;
+  z-index: +11;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+.burger span:first-child
+{
+  transform-origin: 50% 50%;
+}
+
+.burger span:nth-last-child(2)
+{
+  transform-origin: 50% 50%;
+}
+.burger input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(-45deg) translate(0px, -1px);
+}
+
+/*
+ * But let's hide the middle one.
+ */
+.burger input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+.burger input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(45deg) translate(-2px, -1px);
+}
+
+.links{
+  width: 90%;
+  margin: auto;
+  height:50px;
+  margin-right:50px;
+}
+#menu
+{
+  width: 100%;
+  position: absolute;
+  margin-left: 60%;
+  display: flex;
+  flex-direction: row;
+  background: transparent;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+
+  transform-origin: 0% 0%;
+  transform: translate(300%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  color:#fff;
+  padding: 5px 10px;
+  font-size: 22px;
+}
+#menu li:hover,#menu li:focus{
+  text-decoration: none;
+  border-bottom:2px solid #4ef1fb;
+  border-radius: 30px;
+}
+
+@media screen and (max-width: 1024px) {
+  #menu{margin-left: 30%;}
+}
+@media screen and (max-width: 425px) {
+  #menu{
+    margin-left: -10px;
+  }
+  #menu li{
+    padding:10px 10px;
+    font-size: 16px;
+  }
+
+}

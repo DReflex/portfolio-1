@@ -1,16 +1,36 @@
-let nextTodoId = 0;
 
-
-export const addTodo = (text) =>{
-    return{
-    type: 'ADD_TODO',
-    id: nextTodoId++,
+export const queryFrom = (from) =>{
+  return {
+    type:"FROM",
+    from
+  }
+}
+export const querySubject = (subject) =>{
+  return {
+    type:"SUBJECT",
+    subject
+  }
+}
+export const queryText = (text) =>{
+  return {
+    type:"TEXT",
     text
   }
-  }
-export const Delete = (num) =>{
+}
+export const queryReset = () =>{
   return{
-    type: 'DELETE',
-    data: num
+    type:"RESET"
+  }
+}
+export const nav = (nav) =>{
+  return{
+    type:"NAV",
+    nav
+  }
+}
+export const error = (error) => {
+  return{
+    type:"ERROR",
+    error
   }
 }

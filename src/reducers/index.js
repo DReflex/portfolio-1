@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux'
-import todos from './reducer'
+import form from './reducer'
+import State from './state'
 
 const todoApp = combineReducers({
-  todos,
+  form,
+  State
 })
 
 export default todoApp

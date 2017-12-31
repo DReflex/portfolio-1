@@ -1,23 +1,37 @@
 
-const stateInit = []
-const todos = (state = stateInit, action) => {
+const stateInit = {
+  from:"",
+  subject: "",
+  text:"",
+}
+const form = (state = stateInit, action) => {
   switch (action.type) {
-    case 'ADD_TODO':
-      return [
+    case 'FROM':
+      return {
         ...state,
-        {
-          id: action.id,
-          text: action.text,
-        }
-      ]
-      case 'DELETE':
-      const commentId = action.data;
-      return state.filter(comment => comment.id !== commentId);
-
+        from:action.from
+      }
+      case 'SUBJECT':
+      return {
+        ...state,
+        subject:action.subject
+      }
+      case 'TEXT':
+      return {
+        ...state,
+        text:action.text
+      }
+      case 'RESET':
+      return{
+        ...state,
+        from:"",
+        subject: "",
+        text:"",
+      }
       default:
       return state
   }
 
 }
 
-export default todos
+export default form

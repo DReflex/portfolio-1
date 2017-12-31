@@ -1,0 +1,154 @@
+.Contact{
+  margin-top:110px;
+  width:100%;
+  height:98%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background:linear-gradient(90deg, #2B246E, #1f1671) ;
+  color:rgb(255, 64, 64);
+  z-index: 5;
+}
+.skew1{
+  margin-top: -140px;
+  position: absolute;;
+  height:80%;
+  width:100%;
+  z-index: -2;
+  background:linear-gradient(90deg, #2B246E, #1f1671) ;
+  transform: skewY(-5deg);
+}
+.con-head{
+  margin: auto;
+  margin-top:0;
+  width:100%;
+  height:150px;
+  display: flex;
+  flex-direction: row;
+}
+.cube{
+  width:180px;
+  height:180px;
+  background-image: url(https://i.imgur.com/GCNyjJY.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.con-head h1{
+  width:40%;
+  margin: auto;
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Libre Baskerville', serif;
+  color:#4ef1fb;
+  font-weight: bold;
+}
+.profile{
+  width:100px;
+  margin:auto;
+  margin-left: 0;
+  max-width: 200px;
+}
+.con-body{
+  width:100%;
+  margin:auto;
+  margin-top:0;
+  position: absolute;
+}
+
+.con-body h4{
+  margin:auto;
+  text-align: center;
+}
+.a{
+  margin:auto;
+  width:150px;
+  height:auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  text-decoration: none;
+  color:inherit;
+  margin-top:30px;
+}
+.a h3{
+  margin-top: 0;
+}
+.a:hover, a:focus, a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+.con-body a div{
+  margin:auto;
+  margin-top:0;
+  width:150px;
+  height:150px;
+  background-image: url(https://assets-cdn.github.com/images/modules/logos_page/Octocat.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.form{
+  margin:auto;
+  width:80%;
+  display: flex;
+  flex-direction: column;
+}
+.area input, .area textarea {
+  display: flex;
+  width:30%;
+  margin: 20px auto;
+  justify-content: flex-start;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding:10px;
+  color:#000;
+  font-size: 16px;
+
+}
+.area textarea{
+  margin:auto;
+  width:60%;
+  resize:none;
+  height:150px;
+}
+.save{
+  margin:10px auto;
+  padding:5px 10px;
+  max-width: 150px;
+  border:none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  background: rgb(7, 136, 177);
+  color:rgb(7, 0, 52);
+  transition: .3s ease;
+  outline: none;
+}
+.save i{color:#FFF}
+.save:hover, .save:focus{
+  border: 3px solid rgb(7, 0, 52);
+  padding:2px 7px;
+}
+@media screen and (max-width: 425px) {
+  .con-head h1{
+    font-size: 30px;
+  }
+  .cube{
+    width:140px;
+    height:140px;
+  }
+  .profile{
+    width:80px;
+  }
+  .con-body a div{
+    width:120px;
+    height:120px;
+  }
+  .area input, .area textarea{
+    width:90%;
+    margin-top: 10px;
+    margin-bottom:10px;
+  }
+}

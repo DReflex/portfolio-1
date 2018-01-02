@@ -11,14 +11,14 @@ router.post('/mail', function(req, res, next){
       // create new gmailaccount
         service: 'hotmail' ,
         auth: {
-            user: 'vatroslav.puncer@outlook.com', // generated ethereal user
-            pass: 'Kjkszpj.'  // generated ethereal password
+            user: 'm.and.reflex@outlook.com', // generated ethereal user
+            pass: 'TestingPassword'  // generated ethereal password
         }
     });
 
     // setup email data with unicode symbols
     let mailOptions = {
-        from: `"from Frend" ${req.body.from}`, // sender address
+        from: `"from Frend" m.and.reflex@outlook.com`, // sender address
         to: 'vatroslav.puncer@outlook.com', // list of receivers
         subject: req.body.subject, // Subject line
         // text: req.body.text + req.body.from, // plain text body

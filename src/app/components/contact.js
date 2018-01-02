@@ -40,6 +40,7 @@ class Contact extends React.Component{
             'Content-Type': 'application/json'
         }
       })
+      this.props.dispatch(query.queryReset())
     }
 
   }
